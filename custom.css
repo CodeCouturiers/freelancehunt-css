@@ -1,43 +1,27 @@
-.well {
-    background-color: #FFFDE7; /* Светло-желтый фон */
-    color: #333333; /* Темно-серый текст для контраста */
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    line-height: 1.6;
-    padding: 20px;
-    border-left: 6px solid #FFC107; /* Яркая желтая полоса слева */
-    border-radius: 0 8px 8px 0;
-    box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2); /* Желтоватая тень */
-    margin: 20px 0;
-    max-width: 800px;
+:root {
+  --primary-color: #0066cc;
+  --secondary-color: #5a6268;
+  --accent-color: #28a745;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+  --link-color: #0056b3;
+  --yellow-light: #FFFDE7;
+  --yellow: #FFC107;
 }
 
-.well:hover {
-    background-color: #FFF9C4; /* Более насыщенный желтый при наведении */
-    transition: background-color 0.3s ease;
-}
-/* Базовые настройки и типография */
 html {
-  font-size: 18px; /* Базовый размер шрифта увеличен для 2K */
+  font-size: 18px;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
   line-height: 1.8;
-  color: #333;
+  color: var(--text-color);
+  background-color: var(--background-color);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/* Масштабирование заголовков */
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.5rem;
@@ -45,15 +29,20 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-/* Параграфы и отступы */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
 p {
   margin-bottom: 1.5rem;
-  max-width: 70ch; /* Оптимальная длина строки для удобства чтения */
+  max-width: 70ch;
 }
 
-/* Контейнер и отзывчивость */
 .container {
-  max-width: 1440px; /* Увеличено для 2K мониторов */
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -64,22 +53,6 @@ img {
   display: block;
 }
 
-/* Улучшенная цветовая схема */
-:root {
-  --primary-color: #0066cc;
-  --secondary-color: #5a6268;
-  --accent-color: #28a745;
-  --background-color: #f8f9fa;
-  --text-color: #333;
-  --link-color: #0056b3;
-}
-
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-/* Стили для ссылок */
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -90,14 +63,12 @@ a:hover {
   color: var(--primary-color);
 }
 
-/* Кнопки */
 .button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
-  text-decoration: none;
   color: #fff;
   background-color: var(--primary-color);
   border: none;
@@ -110,7 +81,6 @@ a:hover {
   transform: translateY(-2px);
 }
 
-/* Spacing */
 .section {
   padding: 5rem 0;
 }
@@ -119,7 +89,6 @@ a:hover {
   margin-bottom: 2rem;
 }
 
-/* Стилизация скроллбара */
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -137,7 +106,6 @@ a:hover {
   background: var(--primary-color);
 }
 
-/* Карточки с эффектом глубины */
 .card {
   background-color: #fff;
   border-radius: 8px;
@@ -151,21 +119,36 @@ a:hover {
   transform: translateY(-5px);
 }
 
-/* Центрирование с помощью flexbox */
 .center-flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Обрезание длинного текста */
 .truncate {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Медиа-запросы для различных размеров экрана */
+.well {
+  background-color: var(--yellow-light);
+  color: var(--text-color);
+  font-size: 20px;
+  line-height: 1.6;
+  padding: 20px;
+  border-left: 6px solid var(--yellow);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);
+  margin: 20px 0;
+  max-width: 800px;
+  transition: background-color 0.3s ease;
+}
+
+.well:hover {
+  background-color: #FFF9C4;
+}
+
 @media (max-width: 1200px) {
   html { font-size: 16px; }
   .container { max-width: 960px; }
@@ -186,8 +169,7 @@ a:hover {
   .container { width: 100%; padding: 0 1rem; }
 }
 
-/* Улучшение читабельности на больших экранах */
 @media (min-width: 2000px) {
   html { font-size: 20px; }
   .container { max-width: 1800px; }
-} 
+}
